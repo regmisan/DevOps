@@ -1,0 +1,41 @@
+version: '3.3'
+services:
+  db:
+    image: mysql:5.7
+    volumes:
+      - db_data:/var/lib/mysql
+    restart: always
+    environment:
+      MYSQL_ROOT_PASSWORD: root
+      MYSQL_DATABASE: wordpressdb
+      MYSQL_USER: wordpressuser
+      MYSQL_PASSWORD: wordpresspassword
+    networks:
+      - my_custom_network
+    volumes:
+      - db_data:/var/lib/mysql  # Add volume for the 'db' service
+
+  wordpress:
+    depends_on:
+      - db
+    image: wordpress:latest
+    ports:
+      - "8080:80"
+    restart: always
+    environment:
+      WORDPRESS_DB_HOST: db:3306
+      WORDPRESS_DB_USER: wordpressuser
+      WORDPRESS_DB_PASSWORD: wordpresspassword
+      WORDPRESS_DB_NAME: wordpressdb
+    networks:
+      - my_custom_network
+    volumes:
+      - wordpress_data:/var/www/html  # Add volume for the 'wordpress' service
+
+networks:
+  my_custom_network:
+
+volumes:
+  db_data: {}          # Define volume for the 'db' service
+  wordpress_data: {}   # Define volume for the 'wordpress' service
+

@@ -1,0 +1,20 @@
+Components of Docker Compose file
+----------------------------------
+Version: Specifies the Docker Compose file format version. This version number indicates which features and syntax are supported.
+
+Services: Defines the containers that make up your application. Each service represents a container and can have its own configuration options.
+
+Image: Specifies the base image for the container. You can use pre-built images from Docker Hub or reference custom images. Images can be specified by their name or a Dockerfile.
+
+Ports: Maps ports from the host machine to the container. This allows you to access services running in the containers via the host machine's IP and port.
+
+Environment Variables: Allows you to set environment variables inside the container. This is useful for configuring application behavior.
+
+Volumes: Defines data volumes to persist data between container restarts. This is essential for databases and other stateful applications. 
+
+Networks: Specifies custom networks that containers should be connected to. This allows containers to communicate with each other over isolated networks.
+
+Dependencies: Defines dependencies between services. 
+
+Official Documentation:- https://docs.docker.com/compose/compose-file/compose-file-v3/
+
