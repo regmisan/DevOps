@@ -18,3 +18,6 @@ docker-compose -f <custom-docker-compose-filename> down
 # Command to stop and remove containers and volumes defined in a custom Compose file.
 # Replace '<custom-docker-compose-filename>' with the actual filename.
 docker-compose -f <custom-docker-compose-filename> down --volume
+
+# Check running containers' status for the containers running with different docker compose services
+docker-compose -f <custom-docker-compose-filename> ps -a
