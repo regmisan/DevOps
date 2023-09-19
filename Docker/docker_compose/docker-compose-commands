@@ -21,3 +21,6 @@ docker-compose -f <custom-docker-compose-filename> down --volume
 
 # Check running containers' status for the containers running with different docker compose services
 docker-compose -f <custom-docker-compose-filename> ps -a
+
+# View the logs of the services running using a specific docker-compose file/service
+docker compose -f docker-compose-wordpress-mysql8.yml logs
