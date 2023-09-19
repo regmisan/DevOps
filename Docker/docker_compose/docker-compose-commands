@@ -1,0 +1,20 @@
+# Command to start Docker Compose services in detached mode using the default Compose file.
+docker-compose up -d
+
+# Command to start Docker Compose services in detached mode using a custom Compose file.
+# Replace '<custom-docker-compose-file-name>' with the actual filename.
+docker-compose -f <custom-docker-compose-file-name> up -d
+
+# Command to stop and remove containers defined in the default Compose file.
+docker-compose down
+
+# Command to stop and remove containers, volumes, and orphaned containers using the default Compose file.
+docker-compose down --volumes --remove-orphans
+
+# Command to stop and remove containers defined in a custom Compose file.
+# Replace '<custom-docker-compose-filename>' with the actual filename.
+docker-compose -f <custom-docker-compose-filename> down
+
+# Command to stop and remove containers and volumes defined in a custom Compose file.
+# Replace '<custom-docker-compose-filename>' with the actual filename.
+docker-compose -f <custom-docker-compose-filename> down --volume
